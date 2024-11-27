@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+      <form>
+
+        <label class="form-label" for="rendszam">Rendszám:</label>
+        <input [(ngModel)]="rendszam" class="form-control mb-3" type="text" name="rendszam" id="rendszam">
+
+        <label class="form-label" for="gyarto">Gyártó:</label>
+        <input [(ngModel)]="gyarto" class="form-control mb-3" type="text" name="gyarto" id="gyarto">
+
+        <label class="form-label" for="tipus">Típus:</label>
+        <input [(ngModel)]="tipus" class="form-control mb-3" type="text" name="tipus" id="tipus">
+
+        <label class="form-label" for="ccm3">Hengerűrtartalom:</label>
+        <input [(ngModel)]="ccm3" class="form-control mb-3" type="number" name="ccm3" id="ccm3">
+
+        <label class="form-label" for="henger">Henger elosztás:</label>
+        <select [(ngModel)]="henger" class="form-select" name="henger" id="henger">
+          <option value="Egy hengeres">Egy henger</option>
+          <option value="Sor 2">Sor 2</option>
+          <option value="V2">V2</option>
+          <option value="Sor 4">Sor 4</option>
+          <option value="V4">V4</option>
+          <option value="s3">Sor 3</option>
+          <option value="Boxer">Boxer</option>
+        </select>
+
+        <button type="button" id="gomb" class="btn btn-primary mt-3" style="width: 120px;" (click)="felvitel()">Felvitel</button>
+      </form>
+
+      <hr class="border border-success border-2 opacity-100 mt-4">
+
+      <table class="table table-striped my-4">
+        <thead class="table-dark">
+          <tr>
+            <th>Rendszám</th>
+            <th>Gyártó</th>
+            <th>Típus</th>
+            <th>ccm3</th>
+            <th>Henger elosztás</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of motorTomb">
+            <td>{{m.rendszam}}</td>
+            <td>{{m.gyarto}}</td>
+            <td>{{m.tipus}}</td>
+            <td>{{m.ccm3}}</td>
+            <td>{{m.henger}}</td>
+          </tr>
+            
+        </tbody>
+      </table>
+
+      </div>
+    </div>
+  </div>
